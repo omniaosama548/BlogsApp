@@ -125,7 +125,7 @@ const handleSubmit = async (e) => {
         {error && <div className="alert alert-danger">{error}</div>}
 
         <button type="submit" className="btn bg-dark text-white w-100" disabled={loading}>
-  {loading ? "Please wait while we publish your post......." : "Publish Post"}
+  {loading ? "Please wait while we publish your post" : "Publish Post"}
 </button>
 
       </form>
