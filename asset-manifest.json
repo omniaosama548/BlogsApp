@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cffa6eb4.css",
+    "main.js": "/static/js/main.6a3dd4dd.js",
+    "static/js/488.2b17fd07.chunk.js": "/static/js/488.2b17fd07.chunk.js",
+    "static/media/nathan-da-silva-k-rKfqSm4L4-unsplash.jpg": "/static/media/nathan-da-silva-k-rKfqSm4L4-unsplash.70e5b1f75239923aae24.jpg",
+    "index.html": "/index.html",
+    "main.cffa6eb4.css.map": "/static/css/main.cffa6eb4.css.map",
+    "main.6a3dd4dd.js.map": "/static/js/main.6a3dd4dd.js.map",
+    "488.2b17fd07.chunk.js.map": "/static/js/488.2b17fd07.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cffa6eb4.css",
+    "static/js/main.6a3dd4dd.js"
+  ]
+}
