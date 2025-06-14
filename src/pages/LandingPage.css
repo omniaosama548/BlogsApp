@@ -1,0 +1,70 @@
+.landing {
+  height: 100vh;
+  background: url('./nathan-da-silva-k-rKfqSm4L4-unsplash.jpg') no-repeat center center/cover;
+  position: relative;
+  /* z-index: -1; */
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6); 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.animated-text {
+  animation: fadeInUp 1s ease-out;
+  letter-spacing: 2px;
+    transition: all 0.3s ease;
+
+}
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.custom-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  
+   background: linear-gradient(135deg, #717781, #7d8863); 
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+  color: white;
+}
+
+.custom-btn:hover {
+    background: linear-gradient(135deg, #c8ad5a, #485336);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+   
+}
+
+.btn-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.btn-link:hover {
+  color: #fff;
+}

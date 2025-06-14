@@ -1,0 +1,88 @@
+.explore-heading {
+  transition: all 0.3s ease;
+  /* display: inline-block; */
+   color: #3a80d6;
+  cursor: pointer;
+    text-shadow: 1px 1px 8px rgba(13, 202, 240, 0.4);
+  text-align: center !important;
+}
+
+.explore-heading:hover {
+  transform: scale(1.05);
+  color: #3a80d6;
+  /* text-shadow: 1px 1px 8px rgba(13, 202, 240, 0.4); */
+}
+
+.card img {
+  object-fit: cover;
+  height: 200px;
+}
+
+.pagination .page-link {
+  color: #333;
+  font-weight: bold;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #222;
+  border-color: #222;
+  color: #fff;
+}
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}
+
+.btn-dark {
+  border-radius: 25px;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+.bedit {
+  background-color: #0d6efd !important;
+  border: none;
+  color: white !important;
+
+}
+
+.bedit:hover {
+  background-color: #0b5ed7 !important;
+  transform: scale(1.05);
+}
+.bdelete {
+  background-color: #dc3545 !important;
+  border: none;
+    color: white !important;
+}
+
+.bdelete:hover {
+  background-color: #bb2d3b !important;
+  transform: scale(1.05);
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
