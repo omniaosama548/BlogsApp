@@ -74,7 +74,7 @@ function PublicPosts() {
           <div
             className="col-md-6 col-lg-4 mb-4 fade-in"
             key={post.id}
-            style={{ animationDelay: `${index * 0.22}s` }}
+            style={{ animationDelay: `${index * 0.15}s` }}
           >
             <div className="card h-100 shadow-sm border-0">
               <img
