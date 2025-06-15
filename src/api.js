@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "./auth";
 
-const API_BASE = "http://psotsomnapi.runasp.net/api";
+const API_BASE = "https://psotsomnapi.runasp.net/api";
 
 const axiosInstance = axios.create({
   baseURL: API_BASE,

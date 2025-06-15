@@ -9,7 +9,7 @@ function EditPost() {
   const [form, setForm] = useState({
     title: "",
     description: "",
-    imageUrl: "", // نضيف الصورة هنا
+    imageUrl: "", 
   });
 
   const [newImage, setNewImage] = useState(null);
@@ -22,7 +22,7 @@ function EditPost() {
       setForm({
         title: res.data.title,
         description: res.data.description,
-        imageUrl: res.data.imageUrl, // نجيب الرابط
+        imageUrl: res.data.imageUrl, 
       });
     };
     fetchPost();
@@ -58,7 +58,7 @@ function EditPost() {
 
   const fullImageUrl = form.imageUrl?.startsWith("http")
     ? form.imageUrl
-    : `http://psotsomnapi.runasp.net${form.imageUrl}`;
+    : `https://psotsomnapi.runasp.net${form.imageUrl}`;
 
   return (
     <div className="container" style={{ marginTop: "100px", maxWidth: "600px" }}>

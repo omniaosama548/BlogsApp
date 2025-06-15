@@ -48,7 +48,7 @@ const totalPages = Math.ceil(posts.length / postsPerPage);
 
   if (result.isConfirmed) {
     try {
-      await axios.delete(`http://psotsomnapi.runasp.net/api/Post/${id}`, {
+      await axios.delete(`https://psotsomnapi.runasp.net/api/Post/${id}`, {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
       Swal.fire("Deleted!", "Your post has been deleted.", "success");
@@ -84,7 +84,7 @@ const totalPages = Math.ceil(posts.length / postsPerPage);
           {currentPosts.map((post) => {
             const fullImageUrl = post.imageUrl?.startsWith("http")
               ? post.imageUrl
-              : `http://psotsomnapi.runasp.net${post.imageUrl}`;
+              : `https://psotsomnapi.runasp.net${post.imageUrl}`;
 
             return (
               <motion.div

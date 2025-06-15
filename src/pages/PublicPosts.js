@@ -48,7 +48,7 @@ function PublicPosts() {
 
   if (result.isConfirmed) {
     try {
-      await axios.delete(`http://psotsomnapi.runasp.net/api/Post/${id}`, {
+      await axios.delete(`https://psotsomnapi.runasp.net/api/Post/${id}`, {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
       Swal.fire("Deleted!", "Your post has been deleted.", "success");
@@ -77,7 +77,7 @@ function PublicPosts() {
     >
       <div className="card h-100 shadow-sm border-0">
         <img
-          src={`http://psotsomnapi.runasp.net${post.imageUrl}` || `https://picsum.photos/400/200?random=${post.id}`}
+          src={`https://psotsomnapi.runasp.net${post.imageUrl}` || `https://picsum.photos/400/200?random=${post.id}`}
           onError={(e) => {
             e.target.src = `https://picsum.photos/400/200?random=${post.id}`;
           }}
@@ -138,7 +138,7 @@ function PublicPosts() {
     src={
       selectedPost?.imageUrl?.startsWith("http")
         ? selectedPost.imageUrl
-        : `http://psotsomnapi.runasp.net${selectedPost?.imageUrl}`
+        : `https://psotsomnapi.runasp.net${selectedPost?.imageUrl}`
     }
     className="img-fluid mb-3"
     alt="Post"

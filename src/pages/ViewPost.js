@@ -51,9 +51,9 @@ function ViewPost() {
 
   if (!post) return <p className="text-center mt-5">Loading...</p>;
 
-  const fullImageUrl = post.imageUrl?.startsWith("http")
+  const fullImageUrl = post.imageUrl?.startsWith("https")
     ? post.imageUrl
-    : `http://psotsomnapi.runasp.net${post.imageUrl}`;
+    : `https://psotsomnapi.runasp.net${post.imageUrl}`;
 
   return (
     <div className="container" style={{ marginTop: "100px", maxWidth: "700px" }}>
