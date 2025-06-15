@@ -5,9 +5,53 @@ import { getToken } from "../auth";
 import { motion } from "framer-motion";
 import "./Posts.css";
 import Swal from "sweetalert2";
+import { useLocation } from "react-router-dom";
 
 function Posts() {
-  
+  const location = useLocation();
+  const [showToast, setShowToast] = useState(false);
+  useEffect(() => {
+  if (location.state?.postAdded) {
+    Swal.fire({
+      toast: true,
+      icon: 'success',
+      title: 'Your Post Added to pubic Posts check Now!',
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 7000,
+      timerProgressBar: true,
+    });
+  }
+}, [location.state]);
+const handleDeleteAll = async () => {
+  const result = await Swal.fire({
+    title: "Are you sure?",
+    text: "This will delete all your posts!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#6c757d",
+    confirmButtonText: "Yes, delete all!",
+  });
+
+  if (result.isConfirmed) {
+    try {
+      const deletePromises = posts.map((post) =>
+        axios.delete(`https://psotsomnapi.runasp.net/api/Post/${post.id}`, {
+          headers: { Authorization: `Bearer ${getToken()}` },
+        })
+      );
+
+      await Promise.all(deletePromises);
+      Swal.fire("Deleted!", "All your posts have been deleted.", "success");
+      setPosts([]);
+    } catch (err) {
+      console.error("Error deleting all posts:", err);
+      Swal.fire("Error", "Failed to delete all posts.", "error");
+    }
+  }
+};
+
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
@@ -62,10 +106,23 @@ const totalPages = Math.ceil(posts.length / postsPerPage);
 
  return (
   <>
+  {showToast && (
+  <div className="alert alert-success text-center" role="alert">
+     Post added successfully! Check it out in the bulk posts list!
+  </div>
+)}
+
     <div className="posts-container">
       <div className="posts-header">
-        <h2>Your Posts</h2>
+        <h2 className="text-primary">Your Posts</h2>
       </div>
+       {posts.length > 1 && (
+  <div className="text-end mb-4 text-center">
+    <button className="btn btn-danger text-center rounded-4 px-5 mb-2" onClick={handleDeleteAll}>
+      Delete All
+    </button>
+  </div>
+)}
 
       {currentPosts.length === 0 ? (
         <div className="no-posts">
@@ -103,6 +160,7 @@ const totalPages = Math.ceil(posts.length / postsPerPage);
                   <div className="post-body">
                     <h5>{post.title}</h5>
                     <p>{post.description?.slice(0, 120)}...</p>
+                   
                     <p className="text-primary fw-semibold mb-2">By: {post.userName}</p>
                     <div className="post-actions">
                       <Link to={`/edit/${post.id}`} className="btn bedit">

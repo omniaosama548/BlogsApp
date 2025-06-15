@@ -40,9 +40,9 @@ function Footer() {
   transition={{ duration: 0.4, delay: 0 }}
   viewport={{ once: true, amount: 0.1 }}
           >
-            <h5 className="text-info mb-3">About Omnia Blog</h5>
-            <p style={{ fontSize: "14px", letterSpacing: "1.5px" }}>
-              Omnia Blog is a personal project focused on sharing knowledge,
+            <h5 className="text-info mb-3">About My Blog</h5>
+            <p style={{ fontSize: "16px", letterSpacing: "1.4px" ,lineHeight:"1.5"}}>
+              My Blog is a personal project focused on sharing knowledge,
               creativity, and life experiences through simple yet powerful blog posts.
               Whether you're into tech, design, or just exploring, this space is made
               with passion to inspire and connect.
@@ -78,7 +78,7 @@ function Footer() {
                 <a href="#" onClick={(e) => {
                   e.preventDefault();
                   handleAddClick();
-                }} className="text-light text-decoration-none">Add post</a>
+                }} className="text-light text-decoration-none ">Add post</a>
               </li>
               <li>
                 <a href="/login" className="text-light text-decoration-none">Login</a>

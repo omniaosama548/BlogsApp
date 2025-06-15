@@ -75,7 +75,7 @@ function Navbar() {
                 <Link className={`nav-link fs-5 ${location.pathname === "/posts" ? "active" : ""}`} to="/posts">My Posts</Link>
               </li>
               <li className="nav-item">
-                <button className="btn btn-outline-dark" onClick={handleLogout}>Logout</button>
+                <button className="btn btn-outline-dark logout" onClick={handleLogout}>Logout</button>
               </li>
             </>
           ) : (

@@ -35,7 +35,8 @@ const handleSubmit = async (e) => {
     await axios.post("/Post", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
-    navigate("/posts");
+    navigate("/posts", { state: { postAdded: true } });
+
   } catch (err) {
     setError("Something went wrong. Try again.");
   } finally {
@@ -80,7 +81,7 @@ const handleSubmit = async (e) => {
           <input
             type="text"
             name="title"
-            className="form-control"
+            className="form-control border border-primary"
             value={form.title}
             onChange={handleChange}
             required
@@ -91,7 +92,7 @@ const handleSubmit = async (e) => {
           <label className="form-label">Description</label>
           <textarea
             name="description"
-            className="form-control"
+              className="form-control border border-primary"
             rows="4"
             value={form.description}
             onChange={handleChange}
@@ -104,7 +105,7 @@ const handleSubmit = async (e) => {
           <input
             type="file"
             name="image"
-            className="form-control"
+              className="form-control border border-primary"
             accept="image/*"
             onChange={handleChange}
             required

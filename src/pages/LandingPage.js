@@ -42,8 +42,8 @@ const navigate = useNavigate();
   return (
     <div className="landing">
       <div className="overlay text-center text-white">
-        <h1 className="display-4 animated-text">Where Every Post Tells a Story</h1>
-         <p className="lead animated-text fs-2">{text}<span className="cursor">|</span></p>
+        <h1 className="text  animated-text">Where Every Post Tells a Story</h1>
+         <p className="lead mt-1 animated-text fs-2">{text}<span className="cursor">|</span></p>
    <button onClick={handleAddClick} className="custom-btn animated-text">
       <span className="text-white fw-bold fs-4">From Here</span>
     </button>
